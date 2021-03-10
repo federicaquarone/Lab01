@@ -28,7 +28,11 @@ public class Parole  {
 		parole.clear();
 	}
 
-	
+	public void cancella(String p) {
+		if(parole.contains(p)) {
+			parole.remove(p);
+		}
+	}
 	
 	
 }
