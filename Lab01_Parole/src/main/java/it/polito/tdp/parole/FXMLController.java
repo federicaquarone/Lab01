@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextFormatter;
 
 public class FXMLController {
 	
@@ -34,12 +35,19 @@ public class FXMLController {
 
     @FXML
     void doInsert(ActionEvent event) {
-    	// TODO
+    	String risultato="";
+    	elenco.addParola(txtParola.getText());
+    	for (String s: elenco.getElenco()) {
+    		risultato += s+"\n";
+    	   txtResult.setText(risultato);
+    }
     }
 
     @FXML
     void doReset(ActionEvent event) {
-    	// TODO
+    	txtResult.clear();
+    	elenco.reset();
+    	txtParola.clear();
     }
 
     @FXML
